@@ -15,7 +15,7 @@ const useGetOtherUsers = () => {
                 })
                dispatch(setOtherUsers(res.data));
             } catch (error) {
-                console.log(error);
+                console.error(error);
                 
             }
         }

@@ -19,10 +19,9 @@ const InputContainer = () => {
         },
         withCredentials:true
       })
-      console.log(res);
       dispatch(setMessages([...messages,res?.data?.newMessage]))
     } catch (error) {
-      console.log(error);
+      console.error(error);
       
     }
     setInput("");

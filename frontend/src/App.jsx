@@ -35,7 +35,6 @@ function App() {
           userId: authUser._id,
         },
       });
-      console.log("Socket connected:", newsocket.id);
       dispatch(setSocket(newsocket));
 
       newsocket?.on("getOnlineUsers", (onlineUsers) => {

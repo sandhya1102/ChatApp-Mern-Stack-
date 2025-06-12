@@ -4,7 +4,6 @@ import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req,res)=>{
 try {
-      console.log("Request Body:", req.body);
     const senderId = req.id;
     const receiverId = req.params.id;
     const {message} = req.body;
