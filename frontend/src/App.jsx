@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     if (authUser) {
-      const newsocket = io("http://localhost:4000", {
+      const newsocket = io("https://chatapp-mern-stack-1.onrender.com/", {
         query: {
           userId: authUser._id,
         },

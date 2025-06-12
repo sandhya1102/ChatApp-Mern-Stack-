@@ -9,7 +9,7 @@ const useGetMessages = () => {
    useEffect(()=>{
         const fetchMessages = async ()=>{
             try {
-                const res = await axios.get(`http://localhost:4000/api/v1/message/${selectedUser._id}`,{
+                const res = await axios.get(`https://chatapp-mern-stack-1.onrender.com/api/v1/message/${selectedUser._id}`,{
                     withCredentials:true
                 })
                 dispatch(setMessages(res.data))

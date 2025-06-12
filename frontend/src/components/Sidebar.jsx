@@ -16,7 +16,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/v1/user/logout", {
+      const res = await axios.get("https://chatapp-mern-stack-1.onrender.com/api/v1/user/logout", {
         withCredentials: true,
       });
       toast.success(res.data?.message || "Logged out successfully!");
