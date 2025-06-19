@@ -30,7 +30,7 @@ function App() {
 
   useEffect(() => {
     if (authUser) {
-      const newsocket = io("https://chatapp-mern-stack-1.onrender.com/", {
+      const newsocket = io("https://chatapp-mern-stack-1.vercel.app", {
         query: {
           userId: authUser._id,
         },
