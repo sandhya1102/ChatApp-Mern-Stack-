@@ -10,7 +10,7 @@ const useGetOtherUsers = () => {
     useEffect(()=>{
         const fetchOtherUsers = async ()=>{
             try {
-                const res = await axios.get(`https://chatapp-mern-stack-1.onrender.com/api/v1/user/`,{
+                const res = await axios.get(`https://chatapp-mern-stack-1.vercel.app/api/v1/user/`,{
                     withCredentials:true
                 })
                dispatch(setOtherUsers(res.data));
