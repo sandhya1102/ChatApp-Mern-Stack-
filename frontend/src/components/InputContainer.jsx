@@ -13,7 +13,7 @@ const InputContainer = () => {
   const onSubmitHandler = async (e) =>{
     e.preventDefault();
     try {
-      const res = await axios.post(`https://chatapp-mern-stack-1.onrender.com/api/v1/message/send/${selectedUser?._id}`, {message:input} , {
+      const res = await axios.post(`https://chatapp-mern-stack-1.vercel.app/api/v1/message/send/${selectedUser?._id}`, {message:input} , {
         headers:{
           "Content-Type":'application/json'
         },
