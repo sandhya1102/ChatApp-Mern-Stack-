@@ -1,8 +1,9 @@
-import axios from 'axios';
+import axios from '../components/api/axiosInstance';
 import { Send } from 'lucide-react'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setMessages } from '../redux/messageSlice';
+import { MESSAGE_API_END_POINT } from '../utils/constant.js';
 
 const InputContainer = () => {
   const [input,setInput] = useState("");
@@ -13,7 +14,7 @@ const InputContainer = () => {
   const onSubmitHandler = async (e) =>{
     e.preventDefault();
     try {
-      const res = await axios.post(`https://chatapp-mern-stack-1.vercel.app/api/v1/message/send/${selectedUser?._id}`, {message:input} , {
+      const res = await axios.post(`${MESSAGE_API_END_POINT}/send/${selectedUser?._id}`, {message:input} , {
         headers:{
           "Content-Type":'application/json'
         },

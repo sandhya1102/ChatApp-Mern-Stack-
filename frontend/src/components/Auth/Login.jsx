@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import axios from "axios";
+import axios from "../api/axiosInstance.js";
 import { useDispatch } from "react-redux";
 import { USER_API_END_POINT } from "../../utils/constant";
 import { setAuthUser } from "../../redux/userSlice";
@@ -45,7 +45,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen w-full flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
         <div className="text-center mb-6">
           <img
@@ -64,7 +64,6 @@ export default function Login() {
         <form onSubmit={onSubmitHandler} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              {" "}
               Username
             </label>
             <input

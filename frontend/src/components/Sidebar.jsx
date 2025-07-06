@@ -1,12 +1,13 @@
 import { LogOutIcon, Search } from "lucide-react";
 import OtherUsers from "./OtherUsers";
-import axios from "axios";
+import axios from "../components/api/axiosInstance";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthUser, setOtherUsers, setSelectedUser } from "../redux/userSlice";
 import { setMessages } from "../redux/messageSlice";
+import { USER_API_END_POINT } from "../utils/constant.js";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get("https://chatapp-mern-stack-1.vercel.app/api/v1/user/logout", {
+      const res = await axios.get(`${USER_API_END_POINT}/logout`, {
         withCredentials: true,
       });
       toast.success(res.data?.message || "Logged out successfully!");

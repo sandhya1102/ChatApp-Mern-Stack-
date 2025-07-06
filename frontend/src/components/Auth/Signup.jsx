@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { USER_API_END_POINT } from "../../utils/constant.js";
-import axios from "axios";
+import axios from "../api/axiosInstance.js";
 import toast from "react-hot-toast";
 
 export default function Signup() {
@@ -45,7 +45,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-100 flex items-center justify-center p-4">
+    <div className="min-h-screen w-full flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
         <div className="text-center mb-6">
           <img
